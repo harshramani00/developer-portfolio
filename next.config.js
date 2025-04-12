@@ -9,6 +9,6 @@ const isGithubPages = process.env.DEPLOY_ENV === 'GH_PAGES';
 
 module.exports = {
   basePath: isGithubPages ? '/developer-portfolio' : '',
-  assetPrefix: isGithubPages ? '/developer-portfolio/' : '',
+  assetPrefix: '/developer-portfolio/',
   trailingSlash: true,
 };

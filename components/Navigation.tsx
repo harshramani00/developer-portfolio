@@ -3,12 +3,7 @@ import { greetings, socialLinks } from "../portfolio";
 import Headroom from "headroom.js";
 import Head from "next/head";
 
-<Head>
-  <link
-    href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap"
-    rel="stylesheet"
-  />
-</Head>
+
 import {
   UncontrolledCollapse,
   NavbarBrand,
