@@ -1,31 +1,60 @@
 import React, { useState, useEffect } from "react";
 import { greetings, socialLinks } from "../portfolio";
 import Headroom from "headroom.js";
-import { UncontrolledCollapse, NavbarBrand, Navbar, NavItem, NavLink, Nav, Container, Row, Col } from "reactstrap";
+import Head from "next/head";
+
+<Head>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap"
+    rel="stylesheet"
+  />
+</Head>
+import {
+  UncontrolledCollapse,
+  NavbarBrand,
+  Navbar,
+  NavItem,
+  NavLink,
+  Nav,
+  Container,
+  Row,
+  Col
+} from "reactstrap";
 
 const Navigation = () => {
   const [collapseClasses, setCollapseClasses] = useState("");
   const onExiting = () => setCollapseClasses("collapsing-out");
-
   const onExited = () => setCollapseClasses("");
 
   useEffect(() => {
-    let headroom = new Headroom(document.getElementById("navbar-main")!);
-    // initialise
+    const headroom = new Headroom(document.getElementById("navbar-main")!);
     headroom.init();
-  });
+  }, []);
 
   return (
     <>
       <header className="header-global">
-        <Navbar className="navbar-main navbar-transparent navbar-light headroom" expand="lg" id="navbar-main">
+        <Navbar
+          className="navbar-main navbar-transparent navbar-light headroom"
+          expand="lg"
+          id="navbar-main"
+        >
           <Container>
-            <NavbarBrand href="/" className="mr-lg-5">
-              <h2 className="text-white" id="nav-title">
-                {greetings.name}
-              </h2>
-            </NavbarBrand>
-            <button className="navbar-toggler" aria-label="navbar_toggle" id="navbar_global">
+          <NavbarBrand href="/" className="mr-lg-5">
+            <h2
+              className="text-white"
+              id="nav-title"
+              style={{ fontFamily: "'Pacifico', cursive", fontSize: "2rem" }}
+            >
+              {greetings.name}
+            </h2>
+          </NavbarBrand>
+
+            <button
+              className="navbar-toggler"
+              aria-label="navbar_toggle"
+              id="navbar_global"
+            >
               <span className="navbar-toggler-icon" />
             </button>
             <UncontrolledCollapse
@@ -51,34 +80,6 @@ const Navigation = () => {
                 </Row>
               </div>
               <Nav className="align-items-lg-center ml-lg-auto" navbar>
-                {socialLinks.facebook && (
-                  <NavItem>
-                    <NavLink
-                      rel="noopener"
-                      aria-label="Facebook"
-                      className="nav-link-icon"
-                      href={socialLinks.facebook}
-                      target="_blank"
-                    >
-                      <i className="fa fa-facebook-square" />
-                      <span className="nav-link-inner--text d-lg-none ml-2">Facebook</span>
-                    </NavLink>
-                  </NavItem>
-                )}
-                {socialLinks.instagram && (
-                  <NavItem>
-                    <NavLink
-                      rel="noopener"
-                      aria-label="Instagram"
-                      className="nav-link-icon"
-                      href={socialLinks.instagram}
-                      target="_blank"
-                    >
-                      <i className="fa fa-instagram" />
-                      <span className="nav-link-inner--text d-lg-none ml-2">Instagram</span>
-                    </NavLink>
-                  </NavItem>
-                )}
                 {socialLinks.github && (
                   <NavItem>
                     <NavLink
@@ -89,7 +90,9 @@ const Navigation = () => {
                       target="_blank"
                     >
                       <i className="fa fa-github" />
-                      <span className="nav-link-inner--text d-lg-none ml-2">Github</span>
+                      <span className="nav-link-inner--text d-lg-none ml-2">
+                        Github
+                      </span>
                     </NavLink>
                   </NavItem>
                 )}
@@ -103,21 +106,9 @@ const Navigation = () => {
                       target="_blank"
                     >
                       <i className="fa fa-linkedin" />
-                      <span className="nav-link-inner--text d-lg-none ml-2">Linkedin</span>
-                    </NavLink>
-                  </NavItem>
-                )}
-                {socialLinks.twitter && (
-                  <NavItem>
-                    <NavLink
-                      rel="noopener"
-                      aria-label="Twitter"
-                      className="nav-link-icon"
-                      href={socialLinks.twitter}
-                      target="_blank"
-                    >
-                      <i className="fa fa-twitter-square" />
-                      <span className="nav-link-inner--text d-lg-none ml-2">Twitter</span>
+                      <span className="nav-link-inner--text d-lg-none ml-2">
+                        Linkedin
+                      </span>
                     </NavLink>
                   </NavItem>
                 )}

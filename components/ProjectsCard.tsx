@@ -45,6 +45,7 @@ const ProjectsCard = ({ name, desc, github, link }: ProjectType) => {
           </div>
         </CardBody>
       </Card>
+      
     </Col>
   );
 };
